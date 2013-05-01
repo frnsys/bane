@@ -1,54 +1,40 @@
-![Boilerplate](https://github.com/tbranyen/backbone-boilerplate/raw/assets/header.png)
+This is a fork/customization of
+[tbranyen](https://github.com/tbranyen)'s brilliant [Backbone
+Boilerplate](https://github.com/tbranyen/backbone-boilerplate). All
+credit goes to him and the
+[contributors](https://github.com/tbranyen/backbone-boilerplate/contributors) to that project.
 
-Backbone Boilerplate
+Bane
 ====================
 
-This boilerplate is the product of much research and frustration.  Existing
-boilerplates freely modify Backbone core, lack a build process, and are very
-prescriptive; Backbone Boilerplate changes that.
+This is basically a more lightweight version of Backbone Boilerplate.
+My primary use case is rapid prototyping, where the production and
+testing tools provided by Backbone Boilerplate aren't really
+necessary. However, I still want robust and modular code, so that if
+these prototypes *do* need to be adapted for production, it's a smooth
+process.
 
-Organize your application with a logical file structure, develop your
-Models/Collections/Views/Routers inside modules, and build knowing you have
-efficient code that will not bottleneck your users.
+## Changes ##
+* [Handlebars](http://handlebarsjs.com/) added as the templating engine
+* Testing frameworks removed
+* Almond removed
+* Build system (grunt) removed
+* Added some example code
 
-Thanks to our
-[Contributors](https://github.com/tbranyen/backbone-boilerplate/contributors)!
-
-Special Thanks to: [cowboy](http://github.com/cowboy),
-[iros](http://github.com/iros), [nimbupani](http://github.com/nimbupani),
-[wookiehangover](http://github.com/wookiehangover), and
-[jugglinmike](http://github.com/jugglinmike) for helping me create this project.
-
-Extra Special Thanks to: [Paul Guinan](http://bigredhair.com/work/paul.html)
-for giving me usage rights to his fantastic Boilerplate character.
 
 ## Getting started ##
 
-The easiest way to get started is to install Git and clone the repository:
-
 ``` bash
-# Create a new project directory and enter it.
-mkdir myproject && cd myproject
-
-# Using Git, fetch only the last few commits.  You don't need the full history
-# for your project.
-git clone --q --depth 0 git@github.com:tbranyen/backbone-boilerplate.git .
+$ mkdir myproject && cd myproject
+$ git clone --q --depth 0 git@github.com:ftzeng/bane.git .
+$ jam upgrade
 ```
 
 ## Documentation ##
 
 View the Backbone Boilerplate documentation here:
-
 [GitHub Wiki](https://github.com/tbranyen/backbone-boilerplate/wiki)
 
-## Build process ##
-
-To use the new and improved build process, please visit the 
-[grunt-bbb](https://github.com/backbone-boilerplate/grunt-bbb)
-plugin repo and follow the instructions to install.  Basing your project off
-this repo will allow the `bbb` commands to work out-of-the-box.
-
-
-## License
-Copyright (c) 2013 Tim Branyen (@tbranyen)  
+## License ##
+Backbone Boilerplate is Copyright (c) 2013 Tim Branyen (@tbranyen)  
 Licensed under the MIT license.
