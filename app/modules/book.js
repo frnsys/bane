@@ -2,6 +2,9 @@ define([
 			 "app"
 ],
 function(app) {
+
+	// Create a module based off
+	// the app template (in app.js)
 	var Book = app.module();
 
 	Book.Model = Backbone.Model.extend({
@@ -13,12 +16,12 @@ function(app) {
 	Book.Collection = Backbone.Collection.extend({
 		model: Book.Model,
 
-		// Where to get the data
+		// Where to fetch the data from
 		url: function() {
 			return "/data/books.json";
 		},
 
-		// How to handle the data
+		// How to handle the fetched data
 		parse: function(obj) {
 			return obj;
 		},
@@ -33,8 +36,9 @@ function(app) {
 	Book.Views.Item = Backbone.View.extend({
 		template:"book/item",
 		tagName:"li",
+
+		// The data that gets passed to the view
 		serialize: function() {
-			console.log(this.model);
 			return {
 				model: this.model.attributes
 			};
@@ -54,7 +58,7 @@ function(app) {
 			this.render();
 		},
 
-		// Do some stuff before render
+		// Do stuff before the view is rendered
 		beforeRender: function() {
 			// If this item has been activated...
 			if ( app.active === this.model ) {
@@ -68,16 +72,20 @@ function(app) {
 		template: "book/list",
 		className: "book-class",
 
+		// The data that gets passed to the view
 		serialize: function() {
 			return function() {
 				collection: this.options.books
 			};
 		},
 
+		// Do stuff before the view is rendered
 		beforeRender: function() {
-			// For each book in collection
 			var view = this;
+
+			// For each book in collection
 			this.options.books.each(function(book) {
+
 				// Insert a Book item view with book to the ul
 				view.insertView("ul", new Book.Views.Item({
 					model: book

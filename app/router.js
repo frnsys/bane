@@ -18,7 +18,9 @@ function(app, Book) {
 			// Ensure the router has references to the collections
 			_.extend(this, collections);
 
+			// Create the main layout from main.hbs
 			app.useLayout("main").setViews({
+				// Add a Book List view to el of class "books"
 				".books": new Book.Views.List(collections)
 			}).render();
 		},
@@ -40,7 +42,7 @@ function(app, Book) {
 			this.books.book = name;
 
 			// Fetch the data
-			this.books.fetch();
+			this.books.fetch({reset:true});
 		},
 
 		reset: function() {
