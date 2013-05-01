@@ -5,10 +5,8 @@ function(app) {
 	var Book = app.module();
 
 	Book.Model = Backbone.Model.extend({
-		defaults: function() {
-			return {
-				book: {}
-			};
+		defaults: {
+			year: "1900"
 		}
 	});
 
@@ -17,7 +15,7 @@ function(app) {
 
 		// Where to get the data
 		url: function() {
-			return "/books.json";
+			return "/data/books.json";
 		},
 
 		// How to handle the data
@@ -36,6 +34,7 @@ function(app) {
 		template:"book/item",
 		tagName:"li",
 		serialize: function() {
+			console.log(this.model);
 			return {
 				model: this.model.attributes
 			};
