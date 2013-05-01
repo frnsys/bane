@@ -29,10 +29,7 @@ function(app, Book) {
     },
 
     index: function() {
-			// Reset the state and render
-			this.reset();
-
-			this.books.fetch();
+			this.books.fetch({reset:true});
     },
 
 		book: function(name) {

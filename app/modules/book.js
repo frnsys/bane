@@ -22,7 +22,7 @@ function(app) {
 
 		// How to handle the data
 		parse: function(obj) {
-			return obj.data;
+			return obj;
 		},
 
 		initialize: function(models, options) {
@@ -37,8 +37,7 @@ function(app) {
 		tagName:"li",
 		serialize: function() {
 			return {
-				model: this.model,
-				author: this.author
+				model: this.model.attributes
 			};
 		},
 
@@ -58,7 +57,6 @@ function(app) {
 
 		// Do some stuff before render
 		beforeRender: function() {
-
 			// If this item has been activated...
 			if ( app.active === this.model ) {
 				this.$el.siblings().removeClass("active");
@@ -73,29 +71,28 @@ function(app) {
 
 		serialize: function() {
 			return function() {
-				// stuff
+				collection: this.options.books
 			};
 		},
 
 		beforeRender: function() {
 			// For each book in collection
-			/*
-			this.books.each(function(book) {
-
+			var view = this;
+			this.options.books.each(function(book) {
 				// Insert a Book item view with book to the ul
-				this.insertView("ul", new Book.Views.Item({
+				view.insertView("ul", new Book.Views.Item({
 					model: book
 				}));
 
 			});
-			*/
 		},
 
 		initialize: function() {
 			// Listen to some events
 			this.listenTo(this.options.books, {
-				// Render when one of the books reset.
-				"reset": this.render
+				"reset": function() {
+					this.render();
+				}
 			});
 		}
 	});
