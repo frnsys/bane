@@ -1,11 +1,12 @@
 define([
-  "backbone.layoutmanager"
+  "backbone.layoutmanager",
+	"handlebars"
 
   // Include additional libraries installed with JamJS or placed in the
   // `vendor/js` directory, here.
 ],
 
-function(LayoutManager) {
+function(LayoutManager, Handlebars) {
 
   // Provide a global location to place configuration settings and module
   // creation.
@@ -26,7 +27,7 @@ function(LayoutManager) {
 
     fetch: function(path) {
       // Concatenate the file extension.
-      path = path + ".html";
+      path = path + ".hbs";
 
       // If cached, use the compiled template.
       if (JST[path]) {
@@ -38,7 +39,7 @@ function(LayoutManager) {
 
       // Seek out the template asynchronously.
       $.get(app.root + path, function(contents) {
-        done(_.template(contents));
+        done(JST[path] = Handlebars.compile(contents));
       }, "text");
     }
   });
