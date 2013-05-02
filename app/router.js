@@ -50,9 +50,6 @@ function(app, Book) {
 			if ( this.books.length ) {
 				this.books.reset();
 			}
-
-			// Reset active model
-			app.active = false;
 		}
 
   });
