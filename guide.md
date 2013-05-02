@@ -4,7 +4,7 @@ Usage Guide
 Here's a guide to help outline exactly how all of this works.
 
 
-BBBane.ed (*★ Backbone Boilerplate Bane edition★ *) has the following
+BBBane.ed (★Backbone Boilerplate Bane edition★) has the following
 directory structure, with the example project:
 ```
 ├── app
