@@ -16,6 +16,8 @@ process.
 
 ## Changes ##
 * [Handlebars](http://handlebarsjs.com/) added as the templating engine
+* [Underscore.string](https://github.com/epeli/underscore.string) added
+	to provide some extra string manipulation features
 * Testing frameworks removed
 * Almond removed
 * Build system (grunt) removed
