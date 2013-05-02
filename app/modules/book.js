@@ -27,9 +27,17 @@ function(app) {
 		},
 
 		initialize: function(models, options) {
+			this.slugify();
+			this.on("change:title", function(model){
+					this.slugify();
+			});
 			if (options) {
 				//this.bar = options.bar;
 			}
+		},
+
+		slugify: function() {
+			this.set("slug", _.slugify(this.get("title")));
 		}
 	});
 
