@@ -27,22 +27,28 @@ function(app, Book) {
 
     routes: {
       "": "index",
-			"book/:name": "book"
+			"book/:slug": "book"
     },
 
     index: function() {
 			this.books.fetch({reset:true});
     },
 
-		book: function(name) {
+		book: function(slug) {
+			console.log("single view");
+
 			// Reset the state and render
 			this.reset();
 
-			// Set the book
-			this.books.book = name;
-
 			// Fetch the data
-			this.books.fetch({reset:true});
+			var books = this.books;
+			books.fetch({
+				reset:true,
+				success: function() {
+					var book = books.get(slug);
+					console.log(book);
+				}
+			});
 		},
 
 		reset: function() {

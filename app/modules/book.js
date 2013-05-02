@@ -8,8 +8,19 @@ function(app) {
 	var Book = app.module();
 
 	Book.Model = Backbone.Model.extend({
+		idAttribute: "slug",
+
 		defaults: {
 			year: "1900"
+		},
+
+		initialize: function() {
+			this.slugify();
+			this.on("change:title", this.slugify);
+		},
+
+		slugify: function() {
+			this.set("slug", _.slugify( this.get("title") ))
 		}
 	});
 
@@ -27,17 +38,9 @@ function(app) {
 		},
 
 		initialize: function(models, options) {
-			this.slugify();
-			this.on("change:title", function(model){
-					this.slugify();
-			});
 			if (options) {
 				//this.bar = options.bar;
 			}
-		},
-
-		slugify: function() {
-			this.set("slug", _.slugify(this.get("title")));
 		}
 	});
 
