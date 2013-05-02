@@ -30,12 +30,12 @@ body {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: $selection-background;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: $selection-background;
     text-shadow: none;
 }
 
@@ -88,26 +88,6 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
