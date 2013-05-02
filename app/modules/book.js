@@ -39,7 +39,7 @@ function(app) {
 
 		initialize: function(models, options) {
 			if (options) {
-				//this.bar = options.bar;
+				//this.foo = options.foo;
 			}
 		}
 	});
@@ -51,22 +51,17 @@ function(app) {
 		// The data that gets passed to the view
 		serialize: function() {
 			return {
-				model: this.model.attributes
+				book: this.model.attributes
 			};
 		},
 
 		// Bind some events
 		events: {
-			click: "myFunc"
+			click: "selectBook"
 		},
 
-		myFunc: function(ev) {
-			// do stuff
-			// Make this the active model
-			app.active = this.model;
-
-			// Render
-			this.render();
+		selectBook: function(ev) {
+			app.router.go("book", this.model.get("slug"));
 		},
 
 		// Do stuff before the view is rendered
@@ -81,12 +76,13 @@ function(app) {
 
 	Book.Views.List = Backbone.View.extend({
 		template: "book/list",
-		className: "book-class",
+		className: "book-list",
 
 		// The data that gets passed to the view
 		serialize: function() {
-			return function() {
-				collection: this.options.books
+			return {
+				collection: this.options.books,
+				count: this.options.books.length
 			};
 		},
 
@@ -112,6 +108,18 @@ function(app) {
 					this.render();
 				}
 			});
+		}
+	});
+
+	Book.Views.Single = Backbone.View.extend({
+		template: "book/single",
+		className: "single-book",
+		tagName:"section",
+
+		serialize: function() {
+			return {
+				book: this.model.attributes
+			};
 		}
 	});
 

@@ -16,13 +16,17 @@ function(app, Book) {
 			}
 
 			// Ensure the router has references to the collections
+			// i.e. so we can do this.books
+			// to get the collection we just created.
 			_.extend(this, collections);
 
 			// Create the main layout from main.hbs
+			/*
 			app.useLayout("main").setViews({
 				// Add a Book List view to el of class "books"
-				".books": new Book.Views.List(collections)
+				".books": new Book.Views.List({ books: collections.books })
 			}).render();
+			*/
 		},
 
     routes: {
@@ -31,22 +35,28 @@ function(app, Book) {
     },
 
     index: function() {
+			// Create the main layout from main.hbs
+			app.useLayout("main").setViews({
+				// Add a Book List view to el of class "books"
+				".books": new Book.Views.List({ books: this.books })
+			}).render();
+
 			this.books.fetch({reset:true});
     },
 
 		book: function(slug) {
-			console.log("single view");
-
 			// Reset the state and render
 			this.reset();
 
 			// Fetch the data
+			// There is probably a better/proper way to do this
 			var books = this.books;
 			books.fetch({
-				reset:true,
 				success: function() {
 					var book = books.get(slug);
-					console.log(book);
+					app.useLayout("main").setViews({
+						".books": new Book.Views.Single({ model: book })
+					}).render();
 				}
 			});
 		},
@@ -56,7 +66,12 @@ function(app, Book) {
 			if ( this.books.length ) {
 				this.books.reset();
 			}
-		}
+		},
+
+		// Shortcut for building a url.
+    go: function() {
+      return this.navigate(_.toArray(arguments).join("/"), true);
+    }
 
   });
 

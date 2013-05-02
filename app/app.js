@@ -27,6 +27,7 @@ function(LayoutManager, Handlebars, _s) {
     // Allow LayoutManager to augment Backbone.View.prototype.
     manage: true,
 
+		// Templates path
     prefix: "app/templates/",
 
     fetch: function(path) {
