@@ -1,12 +1,16 @@
 define([
   "backbone.layoutmanager",
-	"handlebars"
+	"handlebars",
+	"underscore.string"
 
   // Include additional libraries installed with JamJS or placed in the
   // `vendor/js` directory, here.
 ],
 
-function(LayoutManager, Handlebars) {
+function(LayoutManager, Handlebars, _s) {
+
+	// Load in underscore.string
+	_.mixin(_s.exports());
 
   // Provide a global location to place configuration settings and module
   // creation.
