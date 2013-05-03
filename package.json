@@ -1,11 +1,6 @@
 {
-  "name": "backbone-boilerplate",
-  "version": "0.1.0",
-
-  "dependencies": {
-    "grunt": "~0.4",
-    "grunt-bbb-server": "0.1.0-alpha"
-  },
+  "name": "bane",
+  "version": "0.0.1",
 
   "jam": {
     "packageDir": "./vendor/jam",
