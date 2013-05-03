@@ -1,0 +1,3 @@
+[submodule "app/styles"]
+	path = app/styles
+	url = git://github.com/ftzeng/atomic.git
