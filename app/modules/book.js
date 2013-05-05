@@ -51,7 +51,7 @@ function(app) {
 		// The data that gets passed to the view
 		serialize: function() {
 			return {
-				book: this.model.attributes
+				book: this.model.toJSON()
 			};
 		},
 
@@ -118,7 +118,7 @@ function(app) {
 
 		serialize: function() {
 			return {
-				book: this.model.attributes
+				book: this.model.toJSON()
 			};
 		}
 	});
