@@ -10,49 +10,36 @@ directory structure, with the example project:
 ├── app
 │   ├── app.js
 │   ├── config.js
-│   ├── img
 │   ├── main.js
-│   ├── modules
-│   │   └── book.js
 │   ├── router.js
+│   ├── img
+│   │   └── ... (image assets)
+│   ├── modules
+│   │   ├── book.js
+│   │   └── ... (other modules)
 │   ├── styles
 │   │   ├── _config.scss
 │   │   ├── atomic
-│   │   │   ├── _atomic.scss
-│   │   │   ├── core
-│   │   │   │   ├── _h5bp.scss
-│   │   │   │   ├── _images.scss
-│   │   │   │   ├── _lists.scss
-│   │   │   │   ├── _mixins.scss
-│   │   │   │   ├── _normalize.scss
-│   │   │   │   └── _type.scss
-│   │   │   └── modules
-│   │   │       ├── _geometry.scss
-│   │   │       ├── _icons.scss
-│   │   │       └── _sticky_footer.scss
+│   │   │   └── ... (Atomic files)
 │   │   ├── fonts
-│   │   │   ├── icons.eot
-│   │   │   ├── icons.svg
-│   │   │   ├── icons.ttf
-│   │   │   └── icons.woff
+│   │   │   └── ... (webfonts, including icons)
 │   │   └── index.scss
 │   └── templates
 │       ├── book
-│       │   ├── item.hbs
-│       │   ├── list.hbs
-│       │   └── single.hbs
-│       └── main.hbs
+│       │   └── ... (templates for book views)
+│       ├── main.hbs
+│       └── ... (other templates)
 ├── data
-│   └── books.json
+│   ├── books.json
+│   └── (other dummy data)
 ├── favicon.ico
 ├── index.html
 ├── package.json
-├── readme.md
 ├── source
 │   ├── icons
 │   │   ├── ... (icon source SVGs)
 │   └── images
-│   		├── ... (image source files)
+│				├── ... (image source files)
 └── vendor
     ├── jam 
     │   └── ... (jam packages)
@@ -103,15 +90,15 @@ then loading `main.js`.
 Place dummy data in here as `json` files. Specify your `collection` urls
 to point to the appropriate files here.
 
-`source`
+`source`  
 Place asset source files in here, such as SVGs for building icon fonts,
 or PSDs for raster graphic assets.
 
-`vendor`
+`vendor`  
 Third-party packages are placed in here, such as those installed by Jam
 (in `vendor/jam/`), or those you install yourself (in `vendor/js/`, for
 example).
 
-`package.json`
+`package.json`  
 Specify your app's dependencies and other information here.  
 This is also where Jam's directories are specified.
