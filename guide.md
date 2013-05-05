@@ -1,9 +1,27 @@
 Usage Guide
 ===========
 
-Here's a guide to help outline exactly how all of this works.
+Here's a handy guide to help outline exactly how all of this works.
+
+## Setting it up ##
+First, clone the repo:
+``` bash
+$ git clone https://github.com/ftzeng/bane.git
+```
+
+Then change into the directory and run the setup script:
+``` bash
+$ cd bane
+$ ./powerup
+```
+
+Or, if you're lazy, here's the whole thing in one line:
+``` bash
+$ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup
+```
 
 
+## Directory Structure ##
 BBBane.ed (★Backbone Boilerplate Bane edition★) has the following
 directory structure, with the example project:
 ```
