@@ -30,6 +30,7 @@ function(LayoutManager, Handlebars, _s) {
 		// Templates path
     prefix: "app/templates/",
 
+		// Asynchronously fetch templates
     fetch: function(path) {
       // Concatenate the file extension.
       path = path + ".hbs";

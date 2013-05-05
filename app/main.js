@@ -6,10 +6,11 @@ require([
   "router"
 ],
 
+// Get the whole application started.
 function(app, Router) {
 
-  // Define your master router on the application namespace and trigger all
-  // navigation from this instance.
+	// Create our router
+	// and attach it to the app.
   app.router = new Router();
 
   // Trigger the initial route and enable HTML5 History API support, set the
@@ -18,7 +19,8 @@ function(app, Router) {
 	// Disabling this for prototyping. See below.
   //Backbone.history.start({ pushState: true, root: app.root });
 
-	// Use hash urls for prototyping. Easier to manage.
+	// Use hash urls for prototyping 
+	// This way we can just a simple HTTP server to run the site.
   Backbone.history.start({ pushState: false, root: app.root });
 
 	// Links that are relative – that is, part of this site,
