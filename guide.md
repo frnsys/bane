@@ -60,13 +60,15 @@ directory structure, with the example project:
         └── libs
             └── require.js
 ```
+
+## Core ##
  
 `main.js`  
 Here is where the application kicks off. `app.js` and `router.js` are
 loaded, and then the Router created in `router.js` is instantiated and
-attached to your `app`. 
-Backbone's history is setup. In our case, we're using hash URLs instead
-of the HTML5 history API. Using "true" URLs requires some special
+attached to your `app`.  
+Backbone's history is setup. In our case, we're using hash urls instead
+of the HTML5 history API. Using "true" urls requires some special
 handling on the server, and in our prototyping use case it's nice if we
 can just use a simple HTTP server (see below on how).
 
@@ -94,3 +96,22 @@ This is what RequireJS loads first (as specified in `index.html`) and
 loads Jam's RequireJS config (thereby loading your core packages) and
 then loading `main.js`.
 
+
+## Auxiliary ##
+
+`data`  
+Place dummy data in here as `json` files. Specify your `collection` urls
+to point to the appropriate files here.
+
+`source`
+Place asset source files in here, such as SVGs for building icon fonts,
+or PSDs for raster graphic assets.
+
+`vendor`
+Third-party packages are placed in here, such as those installed by Jam
+(in `vendor/jam/`), or those you install yourself (in `vendor/js/`, for
+example).
+
+`package.json`
+Specify your app's dependencies and other information here.  
+This is also where Jam's directories are specified.
