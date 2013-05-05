@@ -7,5 +7,7 @@ git rm .gitmodules
 rm -rf app/styles/.git
 git add app/styles
 rm -rf .git
-git init
 rm powerup
+rm guide.md
+rm readme.md
+git init
