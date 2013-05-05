@@ -14,8 +14,8 @@ function(app, Router) {
   app.router = new Router();
 
   // Trigger the initial route and enable HTML5 History API support, set the
-  // root folder to '/' by default. The root folder is specified in
-	// app.js.
+  // root folder to '/' by default.
+	// The root folder is specified in app.js
 	// Disabling this for prototyping. See below.
   //Backbone.history.start({ pushState: true, root: app.root });
 
