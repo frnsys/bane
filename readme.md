@@ -29,10 +29,10 @@ process.
 ## Getting started ##
 
 ``` bash
-$ mkdir myproject && cd myproject
-$ git clone --q --depth 0 git@github.com:ftzeng/bane.git .
-$ jam upgrade
+$ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup.sh
 ```
+
+See the [guide](https://github.com/ftzeng/bane/blob/master/guide.md) for more information.
 
 ## Documentation ##
 
