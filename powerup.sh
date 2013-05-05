@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tput setaf 4
-echo "\nPOWERING UP...\n"
+echo -e "\nPOWERING UP...\n"
 tput sgr0
 
 git submodule init
@@ -25,5 +25,5 @@ else
 fi
 
 tput setaf 4
-echo "\nREADY TO GO.\n"
+echo -e "\nREADY TO GO.\n"
 tput sgr0
