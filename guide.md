@@ -12,12 +12,13 @@ $ git clone https://github.com/ftzeng/bane.git
 Then change into the directory and run the setup script:
 ``` bash
 $ cd bane
-$ ./powerup
+$ ./powerup.sh
 ```
 
 Or, if you're lazy, here's the whole thing in one line:
 ``` bash
-$ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup
+$ git clone https://github.com/ftzeng/bane.git && cd bane &&
+./powerup.sh
 ```
 
 
