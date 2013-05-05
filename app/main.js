@@ -13,22 +13,28 @@ function(app, Router) {
   app.router = new Router();
 
   // Trigger the initial route and enable HTML5 History API support, set the
-  // root folder to '/' by default.  Change in app.js.
+  // root folder to '/' by default. The root folder is specified in
+	// app.js.
+	// Disabling this for prototyping. See below.
   //Backbone.history.start({ pushState: true, root: app.root });
 
 	// Use hash urls for prototyping. Easier to manage.
   Backbone.history.start({ pushState: false, root: app.root });
 
-  // All navigation that is relative should be passed through the navigate
-  // method, to be processed by the router. If the link has a `data-bypass`
-  // attribute, bypass the delegation completely.
+	// Links that are relative – that is, part of this site,
+	// will be navigated through the Backbone router, rather
+	// than normal navigation.
+	// If the link has a 'data-bypass' attribute, this special
+	// behavior will be ignored.
   $(document).on("click", "a[href]:not([data-bypass])", function(evt) {
     // Get the absolute anchor href.
     var href = { prop: $(this).prop("href"), attr: $(this).attr("href") };
-    // Get the absolute root.
+
+    // Build the absolute root from app.root (specified in app.js).
     var root = location.protocol + "//" + location.host + app.root;
 
-    // Ensure the root is part of the anchor href, meaning it's relative.
+    // Check that the absolute root matches the link's root,
+		// telling us that it is a relative link.
     if (href.prop.slice(0, root.length) === root) {
       // Stop the default event to ensure the link will not cause a page
       // refresh.
