@@ -62,6 +62,7 @@ directory structure, with the example project:
 ```
  
 `main.js`
+
 Here is where the application kicks off. `app.js` and `router.js` are
 loaded, and then the Router created in `router.js` is instantiated and
 attached to your `app`. 
@@ -77,16 +78,19 @@ Specifying a `data-bypass` attribute on the element will override this
 binding.
 
 `app.js`
+
 Here is where you can load in any additional JS packages and configure
 your `app` object, such as setting what the root url is.
 This is also where `LayoutManager` is setup and where template fetching is
 handled.
 
 `router.js`
+
 This is where the navigation interaction is handled. You load your `app`
 here and your `modules` as well. Routes are created here as well.
 
 `config.js`
+
 This is what RequireJS loads first (as specified in `index.html`) and
 loads Jam's RequireJS config (thereby loading your core packages) and
 then loading `main.js`.
