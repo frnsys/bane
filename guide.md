@@ -139,3 +139,66 @@ example).
 `package.json`  
 Specify your app's dependencies and other information here.  
 This is also where Jam's directories are specified.
+
+
+## Helpful Goodies ##
+
+### A simple HTTP server ###
+This is available in [DippinDots](https://github.com/ftzeng/dippindots),
+my dotfiles. This particular function is from [Mathias Bynen's
+Dotfiles](https://github.com/mathiasbynens/dotfiles/blob/master/.functions).
+
+If you have Python installed, you can add the following to your
+`~/.bash_profile` to make it very easy to quickly get a basic HTTP
+server running.
+
+``` bash
+function server() {
+	local port="${1:-8000}"
+		sleep 1 && open "http://localhost:${port}/" &
+		python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+```
+
+Then reload your `.bash_profile` with:
+```
+$ source ~/.bash_profile
+```
+
+And now you can just run:
+```
+$ server
+```
+
+### Font Custom ###
+[Font Custom](http://fontcustom.com/) is an awesome tool that allows you
+to build your own icon fonts from SVG files.
+
+Here's how to install it on OSX.  
+You will need [Homebrew](http://mxcl.github.io/homebrew/), which can be
+installed by running the following command:
+``` bash
+$ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+```
+
+Then, to install Font Custom:
+``` bash
+$ brew install fontforge ttfautohint
+$ gem install fontcustom
+```
+See the [Font Custom](http://fontcustom.com/) site for Linux installation instructions.
+
+If you're storing your icon SVGs in `source/icons/`, you can run the
+following command from your application root to compile the SVGs into an
+icon webfont:
+``` bash
+$ fontcustom compile source/icons
+```
+
+This will generate a css file and the webfont files. The webfont files
+should go into `app/styles/fonts/` and should be renamed to
+`icons.(extension)`, that is `icons` plus the existing extension. The
+`.icon-` classes specifying the character codes for the icons should be
+ported into `app/styles/_config.scss` (if you're using Atomic).  
+At some point I will try to create a script to automate this process.
+
