@@ -17,8 +17,7 @@ $ ./powerup.sh
 
 Or, if you're lazy, here's the whole thing in one line:
 ``` bash
-$ git clone https://github.com/ftzeng/bane.git && cd bane &&
-./powerup.sh
+$ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup.sh
 ```
 
 
