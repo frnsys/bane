@@ -11,7 +11,8 @@ function(app) {
 		idAttribute: "slug",
 
 		defaults: {
-			year: "1900"
+			author: "",
+			title: "",
 		},
 
 		initialize: function() {
