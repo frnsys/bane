@@ -39,9 +39,6 @@ function(app) {
 		},
 
 		initialize: function(models, options) {
-			if (options) {
-				//this.foo = options.foo;
-			}
 		}
 	});
 
@@ -58,10 +55,10 @@ function(app) {
 
 		// Bind some events
 		events: {
-			click: "selectBook"
+			click: "showBook"
 		},
 
-		selectBook: function(ev) {
+		showBook: function(ev) {
 			app.router.go("book", this.model.get("slug"));
 		},
 
