@@ -1,17 +1,19 @@
 {
   "name": "bane",
   "version": "0.0.1",
-
   "jam": {
     "packageDir": "./vendor/jam",
     "baseUrl": "./app",
-
     "dependencies": {
       "backbone": "*",
       "jquery": "*",
       "lodash": "*",
       "backbone.layoutmanager": "*",
-			"handlebars": "*"
+      "handlebars": "*"
     }
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.4.0"
   }
 }
