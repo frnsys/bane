@@ -39,7 +39,8 @@ module.exports = function(grunt) {
 				options: {
 					pretty: true,
 					client: true,
-					amd: true
+					amd: true,
+					compileDebug: false
 				},
 				files: [{
 					expand: true,
