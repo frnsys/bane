@@ -33,14 +33,16 @@ module.exports = function(grunt) {
 		jade: {
 			compile: {
 				options: {
-					pretty: true
+					pretty: true,
+					client: true,
+					amd: true
 				},
 				files: [{
 					expand: true,
 					src: "**/*.jade",
 					dest: "dist/",
 					cwd: "app/templates",
-					ext: ".html"
+					ext: ".js"
 				}]
 			}
 		}
