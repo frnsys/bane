@@ -17,12 +17,12 @@ these prototypes *do* need to be adapted for production, it's a smooth
 process.
 
 ## Changes ##
-* [Handlebars](http://handlebarsjs.com/) added as the templating engine
+* [Jade](http://jade-lang.com/) added as the templating engine
 * [Underscore.string](https://github.com/epeli/underscore.string) added
 	to provide some extra string manipulation features
 * Testing frameworks removed
 * Almond removed
-* Build system (grunt) removed
+* Build system (grunt) customized
 * Added some example code
 
 
