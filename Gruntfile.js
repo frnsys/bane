@@ -33,7 +33,6 @@ module.exports = function(grunt) {
 		},
 
 		// Compile Jade
-		// http://goo.gl/8QCtb
 		jade: {
 			compile: {
 				options: {
@@ -42,13 +41,9 @@ module.exports = function(grunt) {
 					amd: true,
 					compileDebug: false
 				},
-				files: [{
-					expand: true,
-					src: '**/*.jade',
-					dest: 'dist/',
-					cwd: 'app/templates',
-					ext: '.js'
-				}]
+				files: {
+					'app/templates.js': ['app/templates/**/*.jade']
+				}
 			}
 		},
 
