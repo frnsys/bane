@@ -25,8 +25,10 @@ module.exports = function(grunt) {
 		// Since all other stylesheets are @import-ed in index.scss,
 		// that's the only one we need to compile.
 		sass: {
-			files: {
-				'app/styles/index.css': 'app/styles/index.scss'	
+			dist: {
+				files: {
+					'dist/index.css': 'app/styles/index.scss'	
+				}
 			}
 		},
 
