@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 		// Watch
 		watch: {
 			files: ['vendor/**/*', 'app/**/*', 'data/**/*'],
-			tasks: 'coffee, sass'
+			tasks: 'coffee, sass, jade'
 		},
 
 		// Compile CoffeeScript
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 			compile: {
 				'app/main.js': 'app/main.coffee'
 			}
-		}
+		},
 
 		// Compile SASS/SCSS
 		// Since all other stylesheets are @import-ed in index.scss,
