@@ -4,7 +4,7 @@ require.config({
   // Initialize the application with
 	// the main application file (main.js)
 	// and the JamJS generated configuration file.
-  deps: ["../vendor/jam/require.config", "/dist/main"],
+  deps: ["../vendor/jam/require.config", "../dist/main"],
 
   paths: {
     // Use the underscore build of Lo-Dash to minimize incompatibilities.
