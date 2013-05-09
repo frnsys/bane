@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 					compileDebug: false
 				},
 				files: {
-					'app/templates.js': ['app/templates/**/*.jade']
+					'dist/templates.js': ['app/templates/**/*.jade']
 				}
 			}
 		},
