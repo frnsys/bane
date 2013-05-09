@@ -29,18 +29,19 @@ module.exports = function(grunt) {
 		},
 
 		// Compile Jade
-		// http://goo.gl/eoSwR
+		// http://goo.gl/8QCtb
 		jade: {
 			compile: {
 				options: {
 					pretty: true
 				},
-				files: grunt.file.expandMapping(['**/*.jade'], 'dist/', {
-					cwd: 'app/templates',
-					rename: function(destBase, destPath) {
-						return destBase + destPath.replace(/\.jade$/, '.html');
-					}
-				}
+				files: [{
+					expand: true,
+					src: "**/*.jade",
+					dest: "dist/",
+					cwd: "app/templates",
+					ext: ".html"
+				}]
 			}
 		}
 
