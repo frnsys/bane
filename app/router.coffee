@@ -61,7 +61,7 @@ define [
 				this.books.reset()
 
 		# Shortcut for building a url.
-    go:  ->
+    go: ->
       return this.navigate(_.toArray(arguments).join("/"), true)
 
   return Router

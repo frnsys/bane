@@ -2,7 +2,7 @@ define([
   "backbone.layoutmanager",
 	"underscore.string",
 
-	"templates"
+	"../dist/templates"
 
   // Include additional libraries installed with JamJS or placed in the
   // `vendor/js` directory, here.
