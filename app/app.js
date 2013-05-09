@@ -1,13 +1,14 @@
 define([
   "backbone.layoutmanager",
-	"handlebars",
-	"underscore.string"
+	"underscore.string",
+
+	"templates"
 
   // Include additional libraries installed with JamJS or placed in the
   // `vendor/js` directory, here.
 ],
 
-function(LayoutManager, Handlebars, _s) {
+function(LayoutManager, _s) {
 
 	// Load in underscore.string
 	_.mixin(_s.exports());
@@ -31,9 +32,11 @@ function(LayoutManager, Handlebars, _s) {
     prefix: "app/templates/",
 
 		// Asynchronously fetch templates
+		// NOTE I can get rid of this because
+		// no templates need to be fetched.
+		// They are all loaded precompiled in templates.js
     fetch: function(path) {
       // Concatenate the file extension.
-      path = path + ".hbs";
 
       // If cached, use the compiled template.
       if (JST[path]) {
@@ -45,7 +48,7 @@ function(LayoutManager, Handlebars, _s) {
 
       // Seek out the template asynchronously.
       $.get(app.root + path, function(contents) {
-        done(JST[path] = Handlebars.compile(contents));
+				done( );
       }, "text");
     }
   });
