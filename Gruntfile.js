@@ -15,9 +15,13 @@ module.exports = function(grunt) {
 		// the other coffeescripts will be compiled on the fly.
 		coffee: {
 			compile: {
-				files: {
-					'dist/main.js': 'app/main.coffee'
-				}
+				files: [{
+					expand: true,
+					src: '**/*.coffee',
+					dest: 'dist/',
+					cwd: 'app',
+					ext: '.js'
+				}]
 			}
 		},
 
@@ -27,7 +31,7 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				files: {
-					'dist/index.css': 'app/styles/index.scss'	
+					'dist/styles/index.css': 'app/styles/index.scss'	
 				}
 			}
 		},
