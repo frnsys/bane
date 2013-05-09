@@ -11,11 +11,6 @@ var jam = {
             "main": "backbone.layoutmanager.js"
         },
         {
-            "name": "handlebars",
-            "location": "../vendor/jam/handlebars",
-            "main": "handlebars.js"
-        },
-        {
             "name": "jade-runtime",
             "location": "../vendor/jam/jade-runtime",
             "main": "jade.runtime.js"
@@ -67,11 +62,6 @@ if (typeof require !== "undefined" && require.config) {
             "main": "backbone.layoutmanager.js"
         },
         {
-            "name": "handlebars",
-            "location": "../vendor/jam/handlebars",
-            "main": "handlebars.js"
-        },
-        {
             "name": "jade-runtime",
             "location": "../vendor/jam/jade-runtime",
             "main": "jade.runtime.js"
@@ -120,11 +110,6 @@ else {
             "name": "backbone.layoutmanager",
             "location": "../vendor/jam/backbone.layoutmanager",
             "main": "backbone.layoutmanager.js"
-        },
-        {
-            "name": "handlebars",
-            "location": "../vendor/jam/handlebars",
-            "main": "handlebars.js"
         },
         {
             "name": "jade-runtime",
