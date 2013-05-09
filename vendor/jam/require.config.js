@@ -16,6 +16,11 @@ var jam = {
             "main": "handlebars.js"
         },
         {
+            "name": "jade-runtime",
+            "location": "../vendor/jam/jade-runtime",
+            "main": "jade.runtime.js"
+        },
+        {
             "name": "jquery",
             "location": "../vendor/jam/jquery",
             "main": "dist/jquery.js"
@@ -67,6 +72,11 @@ if (typeof require !== "undefined" && require.config) {
             "main": "handlebars.js"
         },
         {
+            "name": "jade-runtime",
+            "location": "../vendor/jam/jade-runtime",
+            "main": "jade.runtime.js"
+        },
+        {
             "name": "jquery",
             "location": "../vendor/jam/jquery",
             "main": "dist/jquery.js"
@@ -115,6 +125,11 @@ else {
             "name": "handlebars",
             "location": "../vendor/jam/handlebars",
             "main": "handlebars.js"
+        },
+        {
+            "name": "jade-runtime",
+            "location": "../vendor/jam/jade-runtime",
+            "main": "jade.runtime.js"
         },
         {
             "name": "jquery",
