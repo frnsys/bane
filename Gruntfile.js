@@ -39,17 +39,21 @@ module.exports = function(grunt) {
 				options: {
 					pretty: true,
 					client: true,
-					amd: true
+					amd: true,
+					compileDebug: false
 				},
 				files: [{
 					expand: true,
-					src: "**/*.jade",
-					dest: "dist/",
-					cwd: "app/templates",
-					ext: ".js"
+					src: '**/*.jade',
+					dest: 'dist/',
+					cwd: 'app/templates',
+					ext: '.js'
 				}]
 			}
-		}
+		},
+
+		// Clean out dist/
+		clean: ['dist/']
 
 	});
 
@@ -60,6 +64,7 @@ module.exports = function(grunt) {
 	// Load grunt packages
 	// =======================================
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-jade');
