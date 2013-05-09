@@ -9,7 +9,7 @@
       "jquery": "*",
       "lodash": "*",
       "backbone.layoutmanager": "*",
-      "handlebars": "*"
+      "jade-runtime": "*"
     }
   },
   "devDependencies": {
