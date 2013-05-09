@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// Compile Jade
+		// Compile Jade templates
 		jade: {
 			compile: {
 				options: {
