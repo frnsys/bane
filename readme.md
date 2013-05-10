@@ -24,15 +24,12 @@ changes below), it's all to make the development process less
 frustrating and more efficient.
 
 Jade is added to save time from typing out redundant markup tags.
-CoffeeScript is added to make the Javascript end of things cleaner and
-more fluid.
 I've added my own Atomic styling microframework, which is a set of
 common stylings I use. I encourage you to assemble something similar
 that reflects your own style and swap it in!
 
 ## Changes ##
 * [Jade](http://jade-lang.com/) added as the templating engine
-* [CoffeeScript](http://coffeescript.org/) as the primary language
 * [Underscore.string](https://github.com/epeli/underscore.string) added
 	to provide some extra string manipulation features
 * Added my [Atomic] styling microframework (built with
