@@ -25,45 +25,40 @@ $ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup.sh
 BBBane.ed (★Backbone Boilerplate Bane edition★) has the following
 directory structure, with the example project:
 ```
+├── Gruntfile.js
 ├── app
 │   ├── app.js
 │   ├── config.js
 │   ├── main.js
-│   ├── router.js
-│   ├── img
-│   │   └── ... (image assets)
 │   ├── modules
-│   │   ├── book.js
-│   │   └── ... (other modules)
+│   │   └── (your modules)
+│   ├── router.js
 │   ├── styles
-│   │   ├── _config.scss
-│   │   ├── atomic
-│   │   │   └── ... (Atomic files)
-│   │   ├── fonts
-│   │   │   └── ... (webfonts, including icons)
-│   │   └── index.scss
-│   └── templates
-│       ├── book
-│       │   └── ... (templates for book views)
-│       ├── main.hbs
-│       └── ... (other templates)
+│   │   └── (stylesheets, based off Atomic)
+│   ├── templates
+│   │   ├── some_module
+│   │   │   └── (module templates)
+│   │   └── main.jade
+│   └── templates.js
+├── assets
+│   └── images
 ├── data
-│   ├── books.json
-│   └── (other dummy data)
+│   └── (dummy JSON data)
 ├── favicon.ico
 ├── index.html
 ├── package.json
+├── powerup.sh
 ├── source
 │   ├── icons
-│   │   ├── ... (icon source SVGs)
+│   │   └── (SVG source files)
 │   └── images
-│				├── ... (image source files)
+│   		└── (PSDs, AIs, etc)
 └── vendor
-    ├── jam 
-    │   └── ... (jam packages)
+    ├── jam
+    │   └── (jam packages)
     └── js
         └── libs
-            └── require.js
+            └── (other js libs)
 ```
 
 ## Main Logic ##
