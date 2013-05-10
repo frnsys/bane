@@ -31,8 +31,6 @@ define([
 		},
 
 		book: function(slug) {
-			this.reset();
-
 			// There is probably a better/proper
 			// way to do this.
 			var books = this.books;

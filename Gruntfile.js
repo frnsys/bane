@@ -14,8 +14,15 @@ module.exports = function(grunt) {
 
 		// Watch
 		watch: {
-			options: { livereload: true },
-			files: ['vendor/**/*', 'dev/**/*', 'data/**/*'],
+			//options: { livereload: true },
+			files: [
+				'vendor/**/*',
+				'app/styles/**/*.scss',
+				'app/templates/**/*.jade',
+				'app/*.js',
+				'app/modules/**/*.js',
+				'data/**/*'
+			],
 			tasks: ['sass', 'jade']
 		},
 
@@ -40,7 +47,7 @@ module.exports = function(grunt) {
 					compileDebug: false
 				},
 				files: {
-					'app/templates.js': ['app/templates/**/*.jade']
+					'app/templates/templates.js': ['app/templates/**/*.jade']
 				}
 			}
 		}

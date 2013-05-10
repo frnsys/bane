@@ -2,5 +2,5 @@
 node_modules/
 .sass-cache/
 .gitkeep
-app/styles/index.css
-app/templates.js
+index.css
+templates.js
