@@ -7,22 +7,7 @@ module.exports = function(grunt) {
 		// Watch
 		watch: {
 			files: ['vendor/**/*', 'dev/**/*', 'data/**/*'],
-			tasks: ['coffee', 'sass', 'jade']
-		},
-
-		// Compile CoffeeScript
-		// We only need to compile the main script, since, in dev,
-		// the other coffeescripts will be compiled on the fly.
-		coffee: {
-			compile: {
-				files: [{
-					expand: true,
-					src: '**/*.coffee',
-					dest: 'app/',
-					cwd: 'dev',
-					ext: '.js'
-				}]
-			}
+			tasks: ['sass', 'jade']
 		},
 
 		// Compile SASS/SCSS
@@ -64,7 +49,6 @@ module.exports = function(grunt) {
 	// =======================================
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 

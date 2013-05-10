@@ -1,44 +1,36 @@
-(function() {
-  require(['app', 'router'], function(app, Router) {
-    app.router = new Router();
-    /*
-    	Trigger the initial route and enable HTML5 History API support,
-    	set the root folder to '/' by default.
-    	The root folder is specified in `app.coffee`.
-    	Disabling this for prototyping. See below.
-    */
+require([
+				// Application.
+				'app',
 
-    Backbone.history.start({
-      pushState: false,
-      root: app.root
-    });
-    /*
-    	Links that are relative – that is, part of this site,
-    	will be navigated through the Backbone router, rather
-    	than normal navigation.
-    	If the link has a 'data-bypass' attribute, this special
-    	behavior will be ignored.
-    */
+				// Main Router.
+				'router'
 
-    return $(document).on("click", "a[href]:not([data-bypass])", function(evt) {
-      var href, root;
+// Get the whole application started.
+], function(app, Router) {
+	// Create our router and
+	// attach it to the app.
+	app.router = new Router();
 
-      href = {
-        prop: $(this).prop("href"),
-        attr: $(this).attr("href")
-      };
-      root = location.protocol + "//" + location.host + app.root;
-      if (href.prop.slice(0, root.length) === root) {
-        evt.preventDefault();
-      }
-      /*
-         `Backbone.history.navigate` is sufficient for all Routers and will
-         trigger the correct events. The Router's internal `navigate` method
-         calls this anyways.  The fragment is sliced from the root.
-      */
+	// Use hash urls for prototyping
+	// This way we can just use a simple HTTP server
+	Backbone.history.start({ pushState: false, root: app.root });
 
-      return Backbone.history.navigate(href.attr, true);
-    });
-  });
+	// Relative links will be navigated
+	// through the Backbone router.
+	// If the link has a `data-bypass` attr,
+	// this special behavior will be ignored.
+	$(document).on('click', 'a[href]:not([data-bypass])', function(evt) {
+		var href = {
+			prop: $(this).prop('href'),
+			attr: $(this).attr('href')
+		};
 
-}).call(this);
+		var root = location.protocol + '//' + location.host + app.root;
+
+		// Check if the link is relative
+		if (href.prop.slice(0, root.length) === root) {
+			evt.preventDefault();
+			Backbone.history.navigate(href.attr, true);
+		}
+	});
+});
