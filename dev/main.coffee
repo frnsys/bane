@@ -42,7 +42,7 @@ require [
 
 		# Check that the absolute root matches the link's root,
 		# telling us that it is a relative link.
-		if href.prop.slice(0, root.length) == root
+		if href.prop.slice(0, root.length) is root
 			# Stop the default event to ensure the link will not cause a page refresh.
       evt.preventDefault()
 

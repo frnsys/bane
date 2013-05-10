@@ -53,7 +53,7 @@ define [
 		# Do stuff before the view is rendered
 		beforeRender: ->
 			# If this item has been activated...
-			if app.active == this.model
+			if app.active is this.model
 				this.$el.siblings().removeClass("active")
 				this.$el.addClass("active")
 

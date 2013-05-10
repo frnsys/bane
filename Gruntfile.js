@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
 		// Watch
 		watch: {
-			files: ['vendor/**/*', 'app/**/*', 'data/**/*'],
+			files: ['vendor/**/*', 'dev/**/*', 'data/**/*'],
 			tasks: ['coffee', 'sass', 'jade']
 		},
 
@@ -18,8 +18,8 @@ module.exports = function(grunt) {
 				files: [{
 					expand: true,
 					src: '**/*.coffee',
-					dest: 'dist/',
-					cwd: 'app',
+					dest: 'app/',
+					cwd: 'dev',
 					ext: '.js'
 				}]
 			}
@@ -29,9 +29,9 @@ module.exports = function(grunt) {
 		// Since all other stylesheets are @import-ed in index.scss,
 		// that's the only one we need to compile.
 		sass: {
-			dist: {
+			app: {
 				files: {
-					'dist/styles/index.css': 'app/styles/index.scss'	
+					'app/styles/index.css': 'dev/styles/index.scss'	
 				}
 			}
 		},
@@ -46,13 +46,13 @@ module.exports = function(grunt) {
 					compileDebug: false
 				},
 				files: {
-					'dist/templates.js': ['app/templates/**/*.jade']
+					'app/templates.js': ['dev/templates/**/*.jade']
 				}
 			}
 		},
 
-		// Clean out dist/
-		clean: ['dist/']
+		// Clean out app/
+		clean: ['app/']
 
 	});
 
