@@ -28,6 +28,14 @@ $ grunt
 This will automatically compile your Jade templates and Sass stylesheets
 as they change. You can modify this task in `Gruntfile.js`.
 
+More conveniently, you can use the `summon.sh` script, like so:
+``` bash
+$ source ./summon.sh
+```
+
+This is just a little bit more convenient and opens up a new tab with
+the site in it.
+
 
 ## Directory Structure ##
 BBBane.ed (★Backbone Boilerplate Bane edition★) has the following
