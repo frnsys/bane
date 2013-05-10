@@ -44,6 +44,7 @@ that reflects your own style and swap it in!
 
 ``` bash
 $ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup.sh
+$ source ./summon.sh
 ```
 
 See the [guide](https://github.com/ftzeng/bane/blob/master/guide.md) for more information.
