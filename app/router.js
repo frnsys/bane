@@ -17,7 +17,7 @@ define([
 
 			// Create main layout (main.jade)
 			app.useLayout('main').setViews({
-				".books": new Book.Views.List({ books: collections.books });
+				".books": new Book.Views.List({ books: collections.books })
 			}).render();
 		},
 
@@ -39,9 +39,9 @@ define([
 			books.fetch({
 				success: function() {
 					var book = books.get(slug);
-					app.userLayout("main").setViews({
-						".books": new Book.Views.Single({ model: book });
-					});
+					app.useLayout("main").setViews({
+						".books": new Book.Views.Single({ model: book })
+					}).render();
 				}
 			});
 		},
@@ -51,7 +51,7 @@ define([
 			if (this.books.length) {
 				this.books.reset();
 			}
-		}
+		},
 
 		// Shortcut for building a url
 		go: function() {

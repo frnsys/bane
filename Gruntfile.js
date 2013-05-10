@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 		sass: {
 			app: {
 				files: {
-					'app/styles/index.css': 'dev/styles/index.scss'	
+					'app/styles/index.css': 'app/styles/index.scss'	
 				}
 			}
 		},
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 					compileDebug: false
 				},
 				files: {
-					'app/templates.js': ['dev/templates/**/*.jade']
+					'app/templates.js': ['app/templates/**/*.jade']
 				}
 			}
 		},
