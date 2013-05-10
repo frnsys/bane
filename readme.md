@@ -32,7 +32,7 @@ that reflects your own style and swap it in!
 * [Jade](http://jade-lang.com/) added as the templating engine
 * [Underscore.string](https://github.com/epeli/underscore.string) added
 	to provide some extra string manipulation features
-* Added my [Atomic] styling microframework (built with
+* Added my [Atomic](https://github.com/ftzeng/atomic) styling microframework (built with
 	[Sass](http://sass-lang.com/))
 * Testing frameworks removed
 * Almond removed
