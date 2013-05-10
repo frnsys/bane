@@ -14,11 +14,6 @@ define([
 			// Attach collections to the router
 			// i.e. this.books
 			_.extend(this, collections);
-
-			// Create main layout (main.jade)
-			app.useLayout('main').setViews({
-				".books": new Book.Views.List({ books: collections.books })
-			}).render();
 		},
 
 		routes: {
@@ -27,6 +22,11 @@ define([
 		},
 
 		index: function() {
+			// Create main layout (main.jade)
+			app.useLayout('main').setViews({
+				".books": new Book.Views.List({ books: this.books })
+			}).render();
+
 			this.books.fetch({ reset: true });
 		},
 
