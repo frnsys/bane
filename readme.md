@@ -19,7 +19,7 @@ these prototypes *do* need to be adapted for production, it's a smooth
 process.
 
 Most of the changes are to facilitate the "rapid" aspects of things.
-While the boilerplate is beefier in terms of development dependencies (see the
+While the boilerplate is a tad beefier in terms of development dependencies (see the
 changes below), it's all to make the development process less
 frustrating and more efficient.
 
