@@ -172,33 +172,6 @@ This is also where Jam's directories are specified.
 
 ## Helpful Goodies ##
 
-### A simple HTTP server ###
-This is available in [DippinDots](https://github.com/ftzeng/dippindots),
-my dotfiles. This particular function is from [Mathias Bynen's
-Dotfiles](https://github.com/mathiasbynens/dotfiles/blob/master/.functions).
-
-If you have Python installed, you can add the following to your
-`~/.bash_profile` to make it very easy to quickly get a basic HTTP
-server running.
-
-``` bash
-function server() {
-	local port="${1:-8000}"
-		sleep 1 && open "http://localhost:${port}/" &
-		python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-}
-```
-
-Then reload your `.bash_profile` with:
-```
-$ source ~/.bash_profile
-```
-
-And now you can just run:
-```
-$ server
-```
-
 ### Font Custom ###
 [Font Custom](http://fontcustom.com/) is an awesome tool that allows you
 to build your own icon fonts from SVG files.
