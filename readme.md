@@ -34,6 +34,8 @@ that reflects your own style and swap it in!
 	to provide some extra string manipulation features
 * Added my [Atomic](https://github.com/ftzeng/atomic) styling microframework (built with
 	[Sass](http://sass-lang.com/))
+* Integrated [Font Custom](http://fontcustom.com/) for generating custom
+	icon fonts.
 * Testing frameworks removed
 * Almond removed
 * Build system ([Grunt](http://gruntjs.com/)) customized
