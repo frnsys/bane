@@ -17,7 +17,7 @@ $ ./summon.sh
 
 Or, if you're lazy, here's the whole thing in one line:
 ``` bash
-$ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup.sh
+$ git clone https://github.com/ftzeng/bane.git && cd bane && ./summon.sh
 ```
 
 Then, you will probably want to run the [Grunt](http://gruntjs.com/)
