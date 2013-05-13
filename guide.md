@@ -231,3 +231,30 @@ should go into `app/styles/fonts/` and should be renamed to
 ported into `app/styles/_config.scss` (if you're using Atomic).  
 At some point I will try to create a script to automate this process.
 
+
+### Grunt ###
+[Grunt](http://gruntjs.com/) is an essential automation tool. It will
+perform a set of preconfigured tasks for you, which you define in
+`Gruntfile.js`.
+
+Bane's default task can be initialized with:
+``` bash
+$ grunt
+```
+in Bane's root directory.
+
+This will start watching the project files for any changes, and
+automatically compile Jade and Sass files. It will also run a server on
+port 8989, providing access to the project (i.e.
+		`http://localhost:8989`).
+
+If you are not running the native app version of
+[LiveReload](http://livereload.com/), you can
+optionally uncomment the `livereload: true` configuration line in the
+Gruntfile to start a LiveReload server as well. To use it, install the
+[LiveReload Chrome
+extensions](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei),
+so that your site will automatically refresh on file change.
+
+You can easily augment Grunt to your own liking with its [vast set of
+plugins](http://gruntjs.com/plugins).
