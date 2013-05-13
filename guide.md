@@ -197,12 +197,8 @@ icon webfont:
 $ fontcustom compile source/icons
 ```
 
-This will generate a css file and the webfont files. The webfont files
-should go into `app/styles/fonts/` and should be renamed to
-`icons.(extension)`, that is `icons` plus the existing extension. The
-`.icon-` classes specifying the character codes for the icons should be
-ported into `app/styles/_config.scss` (if you're using Atomic).  
-At some point I will try to create a script to automate this process.
+If you have the Grunt default task running, Grunt will automatically
+move and modify these files so that you're using the newest icons.
 
 
 ### Grunt ###
