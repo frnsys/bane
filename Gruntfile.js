@@ -22,7 +22,7 @@ module.exports = function(grunt) {
 				'app/*.js',
 				'app/modules/**/*.js',
 				'data/**/*',
-				'src/fontcustom/*'
+				'source/icons/*'
 			],
 			tasks: ['sass', 'jade', 'fontcustom']
 		},
@@ -54,9 +54,13 @@ module.exports = function(grunt) {
 		},
 
 		// Font Custom
-		// Copy icon fonts
+		shell: {
+			fontcustom: {
+				command: 'fontcustom compile source/icons'
+			}
+		},
 		copy: {
-			main: {
+			fontcustom: {
 				files: [
 					{src: ['source/fontcustom/*.woff'], dest: 'app/styles/fonts/icons.woff'},
 					{src: ['source/fontcustom/*.eot'],  dest: 'app/styles/fonts/icons.eot'},
@@ -66,7 +70,7 @@ module.exports = function(grunt) {
 			}
 		},
 		replace: {
-			main: {
+			fontcustom: {
 				src: ['source/fontcustom/fontcustom.css'],
 				dest: ['app/styles/exts/_icons.scss'],
 				replacements: [{
@@ -84,7 +88,7 @@ module.exports = function(grunt) {
 	// Define grunt tasks
 	// =======================================
 	grunt.registerTask('default', ['connect', 'watch']);
-	grunt.registerTask('fontcustom', ['copy', 'replace']);
+	grunt.registerTask('fontcustom', ['shell:fontcustom', 'copy:fontcustom', 'replace:fontcustom']);
 
 	// Load grunt packages
 	// =======================================
@@ -94,5 +98,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-text-replace');
+	grunt.loadNpmTasks('grunt-shell');
 
 };
