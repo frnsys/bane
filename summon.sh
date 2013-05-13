@@ -2,6 +2,15 @@
 
 tput setaf 4
 echo -e "\nSUMMONING...\n"
+tput setaf 1
+cat << EOF
+ _____ _____ _____ _____
+| __  |  _  |   | |   __|
+| __ -|     | | | |   __|
+|_____|__|__|_|___|_____|
+
+
+EOF
 tput sgr0
 
 # Submodule loading
