@@ -21,9 +21,10 @@ module.exports = function(grunt) {
 				'app/templates/**/*.jade',
 				'app/*.js',
 				'app/modules/**/*.js',
-				'data/**/*'
+				'data/**/*',
+				'src/fontcustom/*'
 			],
-			tasks: ['sass', 'jade']
+			tasks: ['sass', 'jade', 'fontcustom']
 		},
 
 		// Compile SASS/SCSS
@@ -52,15 +53,29 @@ module.exports = function(grunt) {
 			}
 		},
 
+		// Font Custom
 		// Copy icon fonts
 		copy: {
 			main: {
 				files: [
-					{src: ['source/fontcustom/*.woff'], dest: 'assets/icons.woff'}
-					{src: ['source/fontcustom/*.eot'], dest: 'assets/icons.eot'}
-					{src: ['source/fontcustom/*.svg'], dest: 'assets/icons.svg'}
-					{src: ['source/fontcustom/*.ttf'], dest: 'assets/icons.ttf'}
+					{src: ['source/fontcustom/*.woff'], dest: 'app/styles/fonts/icons.woff'},
+					{src: ['source/fontcustom/*.eot'],  dest: 'app/styles/fonts/icons.eot'},
+					{src: ['source/fontcustom/*.svg'],  dest: 'app/styles/fonts/icons.svg'},
+					{src: ['source/fontcustom/*.ttf'],  dest: 'app/styles/fonts/icons.ttf'}
 				]
+			}
+		},
+		replace: {
+			main: {
+				src: ['source/fontcustom/fontcustom.css'],
+				dest: ['app/styles/exts/_icons.scss'],
+				replacements: [{
+					from: /fontcustom-[^.]+/g,
+					to: 'icons'
+				}, {
+					from: 'fontcustom',
+					to: 'icons'
+				}]
 			}
 		}
 
@@ -69,6 +84,7 @@ module.exports = function(grunt) {
 	// Define grunt tasks
 	// =======================================
 	grunt.registerTask('default', ['connect', 'watch']);
+	grunt.registerTask('fontcustom', ['copy', 'replace']);
 
 	// Load grunt packages
 	// =======================================
@@ -77,5 +93,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-text-replace');
 
 };
