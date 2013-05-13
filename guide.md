@@ -12,7 +12,7 @@ $ git clone https://github.com/ftzeng/bane.git
 Then change into the directory and run the setup script:
 ``` bash
 $ cd bane
-$ ./powerup.sh
+$ ./summon.sh
 ```
 
 Or, if you're lazy, here's the whole thing in one line:
@@ -28,9 +28,9 @@ $ grunt
 This will automatically compile your Jade templates, Sass stylesheets,
 and Font Custom SVGs as they change. You can modify this task in `Gruntfile.js`.
 
-More conveniently, you can use the `summon.sh` script, like so:
+More conveniently, you can use the `powerup.sh` script, like so:
 ``` bash
-$ source ./summon.sh
+$ source ./powerup.sh
 ```
 
 This is just a little bit more convenient and opens up a new tab with
@@ -64,6 +64,7 @@ directory structure, with the example project:
 ├── index.html
 ├── package.json
 ├── powerup.sh
+├── summon.sh
 ├── source
 │   ├── icons
 │   │   └── (SVG source files)

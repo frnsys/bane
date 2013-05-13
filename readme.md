@@ -43,8 +43,8 @@ that reflects your own style and swap it in!
 ## Getting started ##
 
 ``` bash
-$ git clone https://github.com/ftzeng/bane.git && cd bane && ./powerup.sh
-$ source ./summon.sh
+$ git clone https://github.com/ftzeng/bane.git && cd bane && ./summon.sh
+$ source ./powerup.sh
 ```
 
 See the [guide](https://github.com/ftzeng/bane/blob/master/guide.md) for more information.
