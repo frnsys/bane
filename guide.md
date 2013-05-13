@@ -25,8 +25,8 @@ Then, you will probably want to run the [Grunt](http://gruntjs.com/)
 ``` bash
 $ grunt
 ```
-This will automatically compile your Jade templates and Sass stylesheets
-as they change. You can modify this task in `Gruntfile.js`.
+This will automatically compile your Jade templates, Sass stylesheets,
+and Font Custom SVGs as they change. You can modify this task in `Gruntfile.js`.
 
 More conveniently, you can use the `summon.sh` script, like so:
 ``` bash
@@ -190,15 +190,17 @@ $ gem install fontcustom
 ```
 See the [Font Custom](http://fontcustom.com/) site for Linux installation instructions.
 
-If you're storing your icon SVGs in `source/icons/`, you can run the
-following command from your application root to compile the SVGs into an
-icon webfont:
+The source SVGs are located in `source/icons`, so if you are modifying,
+adding, or removing icons, place them there.
+
+If you have the Grunt default (watch) task running, Grunt will automatically
+compile, move and modify these files so that you're using the newest icons.
+
+Otherwise, you'll need to run following command from your application
+root to compile the SVGs into an icon font.
 ``` bash
 $ fontcustom compile source/icons
 ```
-
-If you have the Grunt default task running, Grunt will automatically
-move and modify these files so that you're using the newest icons.
 
 
 ### Grunt ###
@@ -213,7 +215,7 @@ $ grunt
 in Bane's root directory.
 
 This will start watching the project files for any changes, and
-automatically compile Jade and Sass files. It will also run a server on
+automatically compile Jade, Sass, and Font Custom files. It will also run a server on
 port 8989, providing access to the project (i.e.
 		`http://localhost:8989`).
 
