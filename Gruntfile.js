@@ -50,6 +50,18 @@ module.exports = function(grunt) {
 					'app/templates/templates.js': ['app/templates/**/*.jade']
 				}
 			}
+		},
+
+		// Copy icon fonts
+		copy: {
+			main: {
+				files: [
+					{src: ['source/fontcustom/*.woff'], dest: 'assets/icons.woff'}
+					{src: ['source/fontcustom/*.eot'], dest: 'assets/icons.eot'}
+					{src: ['source/fontcustom/*.svg'], dest: 'assets/icons.svg'}
+					{src: ['source/fontcustom/*.ttf'], dest: 'assets/icons.ttf'}
+				]
+			}
 		}
 
 	});
@@ -64,5 +76,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
 };
