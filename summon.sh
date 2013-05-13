@@ -50,6 +50,12 @@ else
 	npm install
 fi
 
-tput setaf 4
-echo -e "\nREADY TO GO.\n"
+tput setaf 2
+cat << EOF
+ _____ _____ _____ ____  __ __
+| __  |   __|  _  |    \|  |  |
+|    -|   __|     |  |  |_   _|
+|__|__|_____|__|__|____/  |_|
+
+EOF
 tput sgr0
