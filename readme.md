@@ -1,7 +1,7 @@
 This is a fork/customization of
 [tbranyen](https://github.com/tbranyen)'s brilliant [Backbone
 Boilerplate](https://github.com/tbranyen/backbone-boilerplate). All
-credit goes to him and the
+credit for Backbone Boilerplate goes to him and the
 [contributors](https://github.com/tbranyen/backbone-boilerplate/contributors) to that project.
 
 ![Bane](http://supermedes.com/assets/bane.jpg)
