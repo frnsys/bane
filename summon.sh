@@ -47,7 +47,7 @@ if [[ ! "$(type -P npm)" ]]; then
 	echo "then run 'npm install' in this directory."
 else
 	echo "Installing npm dependencies..."
-	npm install
+	npm install -d
 fi
 
 tput setaf 2
