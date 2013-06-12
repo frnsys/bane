@@ -18,11 +18,13 @@ module.exports = function(grunt) {
 			files: [
 				'vendor/**/*',
 				'app/styles/**/*.scss',
+				'app/styles/**/*.sass',
 				'app/templates/**/*.jade',
 				'app/*.js',
 				'app/modules/**/*.js',
 				'data/**/*',
-				'source/icons/*'
+				'source/icons/*',
+                '!app/styles/exts/_icons.scss'
 			],
 			tasks: ['sass', 'jade', 'fontcustom']
 		},
@@ -33,7 +35,7 @@ module.exports = function(grunt) {
 		sass: {
 			app: {
 				files: {
-					'app/styles/index.css': 'app/styles/index.scss'	
+					'app/styles/index.css': 'app/styles/index.sass'	
 				}
 			}
 		},
@@ -62,20 +64,20 @@ module.exports = function(grunt) {
 		copy: {
 			fontcustom: {
 				files: [
-					{src: ['source/fontcustom/*.woff'], dest: 'app/styles/fonts/icons.woff'},
-					{src: ['source/fontcustom/*.eot'],  dest: 'app/styles/fonts/icons.eot'},
-					{src: ['source/fontcustom/*.svg'],  dest: 'app/styles/fonts/icons.svg'},
-					{src: ['source/fontcustom/*.ttf'],  dest: 'app/styles/fonts/icons.ttf'}
+					{src: ['source/icons/fontcustom/*.woff'], dest: 'app/styles/fonts/icons.woff'},
+					{src: ['source/icons/fontcustom/*.eot'],  dest: 'app/styles/fonts/icons.eot'},
+					{src: ['source/icons/fontcustom/*.svg'],  dest: 'app/styles/fonts/icons.svg'},
+					{src: ['source/icons/fontcustom/*.ttf'],  dest: 'app/styles/fonts/icons.ttf'}
 				]
 			}
 		},
 		replace: {
 			fontcustom: {
-				src: ['source/fontcustom/fontcustom.css'],
+				src: ['source/icons/fontcustom/fontcustom.css'],
 				dest: ['app/styles/exts/_icons.scss'],
 				replacements: [{
-					from: /fontcustom-[^.]+/g,
-					to: 'icons'
+					from: /fontcustom_[^.]+/g,
+					to: 'fonts/icons'
 				}, {
 					from: 'fontcustom',
 					to: 'icons'
