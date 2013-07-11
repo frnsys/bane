@@ -19,6 +19,7 @@ module.exports = function(grunt) {
 				'vendor/**/*',
 				'app/styles/**/*.scss',
 				'app/styles/**/*.sass',
+				'app/styles/modules/*.sass',
 				'app/templates/**/*.jade',
 				'app/*.js',
 				'app/modules/**/*.js',
