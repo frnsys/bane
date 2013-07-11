@@ -57,5 +57,6 @@ View the Backbone Boilerplate documentation here:
 [GitHub Wiki](https://github.com/tbranyen/backbone-boilerplate/wiki)
 
 ## License ##
+Bane is by Francis Tseng (@frnsys)
 Backbone Boilerplate is Copyright (c) 2013 Tim Branyen (@tbranyen)  
 Licensed under the MIT license.
